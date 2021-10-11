@@ -1,11 +1,13 @@
-
+// let playerSelectionOption = prompt();
 let selectionOption =["rock", "paper", "scissors"];
 let mathRandom =Math.floor(Math.random() * 3);
 let playerScore =0;
 let computerScore= 0;
 let roundPlayed=0;
 
-
+function reqUserInput(){
+	prompt("rock, paper ,scissors");
+}
 function playRound(playerSelection, computerSelection) {
 
 	console.log(computerSelection);
@@ -43,15 +45,17 @@ function playRound(playerSelection, computerSelection) {
 
 
 
+
 // const playerSelection = "rock";
 // const computerSelection = computerPlay();
 // console.log(playRound(playerSelection, computerSelection));
 
-playRound("paper", selectionOption[mathRandom]);
-playRound("paper", selectionOption[mathRandom]);
-playRound("paper", selectionOption[mathRandom]);
-playRound("paper", selectionOption[mathRandom]);
-playRound("paper", selectionOption[mathRandom]);
+playRound(reqUserInput(), selectionOption[mathRandom]);
+playRound(reqUserInput(), selectionOption[mathRandom]);
+playRound(reqUserInput(), selectionOption[mathRandom]);
+playRound(reqUserInput(), selectionOption[mathRandom]);
+playRound(reqUserInput(), selectionOption[mathRandom]);
+
 
   if(roundPlayed == 5){
   	if(playerScore > computerScore){
