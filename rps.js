@@ -1,4 +1,4 @@
-// let playerSelectionOption = prompt();
+alert("get smashed by the rock, get cut, you can beat a weak paper");
 let selectionOption =["rock", "paper", "scissors"];
 let mathRandom =Math.floor(Math.random() * 3);
 let playerScore =0;
@@ -6,8 +6,28 @@ let computerScore= 0;
 let roundPlayed=0;
 
 function reqUserInput(){
-	prompt("rock, paper ,scissors");
+	return prompt("rock, paper ,scissors").toLowerCase();
 }
+
+function score(){
+  console.log("your score: " + playerScore);
+  console.log("computer score: " + computerScore);
+}
+function finalResultCheck(){
+    if(roundPlayed == 5){
+  	if(playerScore > computerScore){
+  		console.log("Player won the game");
+  		score();
+  	}else if( playerScore < computerScore){
+  		console.log("Try again, you lost");
+  		score();
+  	}else{
+  		console.log("Wasn't so easy, try again");
+  		score();
+  	}}
+
+}
+
 function playRound(playerSelection, computerSelection) {
 
 	console.log(computerSelection);
@@ -36,11 +56,18 @@ function playRound(playerSelection, computerSelection) {
   	computerScore += 1;
   }
   roundPlayed++;
-  console.log(roundPlayed)
+  console.log("Number of round: " + roundPlayed)
   // console.log(computerSelection)
 
   }
 
+function play(){
+	playRound(reqUserInput(), selectionOption[mathRandom]);
+	playRound(reqUserInput(), selectionOption[mathRandom]);
+	playRound(reqUserInput(), selectionOption[mathRandom]);
+	playRound(reqUserInput(), selectionOption[mathRandom]);
+	playRound(reqUserInput(), selectionOption[mathRandom]);
+}
 
 
 
@@ -50,18 +77,9 @@ function playRound(playerSelection, computerSelection) {
 // const computerSelection = computerPlay();
 // console.log(playRound(playerSelection, computerSelection));
 
-playRound(reqUserInput(), selectionOption[mathRandom]);
-playRound(reqUserInput(), selectionOption[mathRandom]);
-playRound(reqUserInput(), selectionOption[mathRandom]);
-playRound(reqUserInput(), selectionOption[mathRandom]);
-playRound(reqUserInput(), selectionOption[mathRandom]);
+
+play();
+finalResultCheck();
 
 
-  if(roundPlayed == 5){
-  	if(playerScore > computerScore){
-  		console.log("Player won the game");
-  	}else if( playerScore < computerScore){
-  		console.log("computer won the game")
-  	}else{
-  		console.log("game tied")
-  	}}
+
